@@ -1,11 +1,11 @@
 {
-  "name": "Simple API Gateway",
-  "version": "0.1",
+  "name": "simple-api-gateway",
+  "version": "0.1.0",
   "engines": {
     "node": ">=4.0"
   },
   "preferGlobal": true,
-  "description": "API Gateway setup tool. Very easy, very simply/",
+  "description": "API Gateway setup tool. Very easy, very simply.",
   "author": "horike37",
   "license": "MIT",
   "repository": {
@@ -14,16 +14,19 @@
   },
   "main": "lib/main.js",
   "bin": {
-    "apigw": "./bin/serverless"
+    "apigw": "./bin/apigw"
   },
   "scripts": {
     "test": "mocha tests/all"
   },
   "devDependencies": {
     "chai": "^3.2.0",
-    "node-uuid": "^1.4.2"
+    "mocha": "^2.2.5"
   },
   "dependencies": {
-    "aws-sdk": "^2.2.40"
+    "aws-sdk": "^2.2.40",
+    "co": "^4.6.0",
+    "inquirer": "^1.1.0",
+    "prompt-promise": "^1.0.3"
   }
 }
