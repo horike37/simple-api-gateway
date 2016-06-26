@@ -2,21 +2,11 @@
 
 'use strict'
 var main = require('../lib/main')
+var args = process.argv
 
-
+if ( args[2] === 'api' && args[3] === 'create' ) {
   main.setup()
+} else {
+  console.log('Simple API Gateway: The option is not exists')
+}
 
-/*
-var aws = require('aws-sdk')
-aws.config.update({region:'ap-northeast-1'})
-var apigateway = new aws.APIGateway({apiVersion: '2015-07-09'})
-
-
-var params = {
-  name: 'spanking'
-};
-apigateway.createRestApi(params, function(err, data) {
-  if (err) console.log(err, err.stack); // an error occurred
-  else     console.log(data);           // successful response
-})
-*/
