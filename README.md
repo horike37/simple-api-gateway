@@ -12,3 +12,7 @@ This module provide to interactive setting for API Gateway. Very easy. Very simp
 Create API.
 
     $ apigw api create
+
+## Sample Screen
+API set up
+<img src="https://raw.githubusercontent.com/horike37/simple-api-gateway/master/screenshot-1.png" title="travis"/>
