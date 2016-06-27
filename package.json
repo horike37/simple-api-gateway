@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.2.40",
+    "commander": "^2.9.0",
     "inquirer": "^1.1.0"
   }
 }

@@ -1,12 +1,31 @@
 #!/usr/bin/env node
 
 'use strict'
-var main = require('../lib/main')
-var args = process.argv
+var program = require('commander'),
+    version = require('./../package.json').version
 
-if ( args[2] === 'api' && args[3] === 'create' ) {
-  main.setup()
-} else {
-  console.log('Simple API Gateway: The option is not exists')
-}
+program
+    .version(version)
+    .option('create', 'create API')
+    .option('edit',   'edit API')
+    .option('deploy', 'deploy API')
+    .option('delete', 'delete API')
 
+
+program.on('create', function () {
+  require('../lib/create').action()
+})
+
+program.on('edit', function () {
+  require('../lib/edit').action()
+})
+
+program.on('deploy', function () {
+    
+})
+
+program.on('delete', function () {
+    
+})
+
+program.parse(process.argv)
