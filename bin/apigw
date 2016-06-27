@@ -21,7 +21,7 @@ program.on('edit', function () {
 })
 
 program.on('deploy', function () {
-    
+  require('../lib/deploy').action()  
 })
 
 program.on('delete', function () {
