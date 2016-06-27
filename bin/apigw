@@ -25,7 +25,7 @@ program.on('deploy', function () {
 })
 
 program.on('delete', function () {
-    
+  require('../lib/delete').action()
 })
 
 program.parse(process.argv)
