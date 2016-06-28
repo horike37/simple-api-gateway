@@ -14,5 +14,4 @@ Create API.
     $ apigw api create
 
 ## Sample Screen
-API set up
-<img src="https://raw.githubusercontent.com/horike37/simple-api-gateway/master/samplescreen-1.gif" />
+<img src="https://raw.githubusercontent.com/horike37/simple-api-gateway/sample/samplescreen-1.gif" />
