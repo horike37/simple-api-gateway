@@ -4,6 +4,8 @@
 API Gateway is awsome service in Amazon Web Services. But It is a little difficult setting, because setting item is many.
 This module provide to easy interactive setting for API Gateway. Very easy. Very simple.
 
+<img src="https://raw.githubusercontent.com/horike37/simple-api-gateway/sample/samplescreen-1.gif" />
+
 ## Install
 
     $ npm install -g simple-api-gateway
@@ -25,5 +27,3 @@ Delete API.
 
     $ apigw api delete
 
-## Sample Screen
-<img src="https://raw.githubusercontent.com/horike37/simple-api-gateway/sample/samplescreen-1.gif" />
