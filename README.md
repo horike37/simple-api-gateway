@@ -15,4 +15,4 @@ Create API.
 
 ## Sample Screen
 API set up
-<img src="https://raw.githubusercontent.com/horike37/simple-api-gateway/master/screenshot-1.png" title="travis"/>
+<img src="https://raw.githubusercontent.com/horike37/simple-api-gateway/master/samplescreen-1.gif" />
