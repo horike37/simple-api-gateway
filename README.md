@@ -12,17 +12,17 @@ This module provide to easy interactive setting for API Gateway. Very easy. Very
 ## How to use
 Create API.
 
-    $ apigw api create
+    $ apigw create
     
 Edit API.
 
-    $ apigw api edit
+    $ apigw edit
 
 Deploy and Publish API.
 
-    $ apigw api deploy
+    $ apigw deploy
     
 Delete API.
 
-    $ apigw api delete
+    $ apigw delete
 
