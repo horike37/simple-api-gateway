@@ -34,3 +34,17 @@ node_modules
 #OS STUFF
 .DS_Store
 .tmp
+
+# Created by https://www.gitignore.io/api/emacs
+
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
