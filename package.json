@@ -17,11 +17,11 @@
     "apigw": "./bin/apigw"
   },
   "scripts": {
-    "test": "mocha tests/all"
+    "test": "mocha -w tests/all"
   },
   "devDependencies": {
-    "chai": "^3.2.0",
-    "mocha": "^2.2.5"
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   },
   "dependencies": {
     "aws-sdk": "^2.2.40",
