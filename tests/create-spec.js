@@ -5,8 +5,7 @@ var chai      = require('chai'),
     inquirer  = require('inquirer'),
     aws       = require('aws-sdk'),
     create    = require('../lib/create'),
-    should    = chai.should(),
-    apigateway
+    should    = chai.should()
   
 describe('API Create Tests', function() {
   this.timeout(0)
