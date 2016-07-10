@@ -20,6 +20,7 @@
     "test": "mocha -w tests/all"
   },
   "devDependencies": {
+    "bdd-stdin": "^0.2.0",
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
   },
