@@ -17,6 +17,7 @@ describe('API Create Tests', function() {
     apigw.setRegion(config.region).then(function() {
       return apigw.createRestApi(config.apiname)
     }).then(function(res) {
+      config.apiid = res.id
       res.name.should.equal(config.apiname)
       done()
     })
