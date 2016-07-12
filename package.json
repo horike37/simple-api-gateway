@@ -17,10 +17,10 @@
     "apigw": "./bin/apigw"
   },
   "scripts": {
-    "test": "mocha -w tests/all"
+    "test": "mocha tests/all"
   },
   "devDependencies": {
-    "bdd-stdin": "^0.2.0",
+    "aws-sdk-mock": "^1.3.0",
     "chai": "^3.5.0",
     "lodash": "^4.13.1",
     "mocha": "^2.5.3"

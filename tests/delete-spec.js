@@ -1,7 +1,7 @@
 'use strict'
 
 var chai      = require('chai'),
-    aws       = require('aws-sdk'),
+    aws       = require('aws-sdk-mock'),
     apiDelete = require('../lib/delete'),
     config    = require('./config'),
     _         = require('lodash'),
@@ -13,6 +13,23 @@ describe('API Delete Tests', function() {
   after(function() {})
   
   it('Delete action test', function(done) {
+    aws.mock('APIGateway', 'getRestApis', function (params, callback){
+      let result = {
+        items:[{ 
+          id: config.apiid,
+          name: config.apiname,
+          createdDate: Date.now()
+        }]
+      }
+      
+      callback(null, result)
+    })
+    
+    aws.mock('APIGateway', 'deleteRestApi', function (params, callback){
+      let result = {}
+      callback(null, result);
+    })
+  
     let apigw = new apiDelete()
   
     apigw.setRegion(config.region).then(function() {
