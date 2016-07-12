@@ -1,4 +1,5 @@
 # Simple API Gateway
+[![Build Status](https://travis-ci.org/horike37/simple-api-gateway.svg?branch=master)](https://travis-ci.org/horike37/simple-api-gateway)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 API Gateway is awsome service in Amazon Web Services. But It is a little difficult setting, because setting item is many.
