@@ -4,8 +4,7 @@ var chai       = require('chai'),
     aws        = require('aws-sdk-mock'),
     create     = require('../lib/create'),
     config     = require('./config'),
-    should     = chai.should(),
-    apigateway
+    should     = chai.should()
   
 describe('API Create Tests', function() {
   this.timeout(0)
