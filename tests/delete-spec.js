@@ -33,7 +33,7 @@ describe('API Delete Tests', function() {
     let apigw = new apiDelete()
   
     apigw.setRegion(config.region).then(function() {
-      return apigw.setDeleteApiList()
+      return apigw.setApiList()
     }).then(function(res) {
       let api = _.filter(apigw.q.apiname.choices, { 'value': config.apiid })
       api[0].name.should.equal(config.apiname)
