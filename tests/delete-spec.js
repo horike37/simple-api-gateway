@@ -12,7 +12,7 @@ describe('API Delete Tests', function() {
   before(function() {})
   after(function() {})
   
-  it('Delete action test', function(done) {
+  it('Delete action', function(done) {
     aws.mock('APIGateway', 'getRestApis', function (params, callback){
       let result = {
         items:[{ 

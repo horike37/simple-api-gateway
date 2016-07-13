@@ -7,4 +7,5 @@ describe('All Tests', function() {
   
   require('./create-spec')
   require('./delete-spec')
+  require('./deploy-spec')
 })
