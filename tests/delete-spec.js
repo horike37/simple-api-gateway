@@ -5,14 +5,11 @@ var chai      = require('chai'),
     apiDelete = require('../lib/delete'),
     config    = require('./config'),
     _         = require('lodash'),
-    should    = chai.should()
+    should    = chai.should(),
+    apigw
   
 describe('API Delete Tests', function() {
-  this.timeout(0)
-  before(function() {})
-  after(function() {})
-  
-  it('Delete action', function(done) {
+  beforeEach(function() {
     aws.mock('APIGateway', 'getRestApis', function (params, callback){
       let result = {
         items:[{ 
@@ -26,21 +23,23 @@ describe('API Delete Tests', function() {
     })
     
     aws.mock('APIGateway', 'deleteRestApi', function (params, callback){
-      let result = {}
-      callback(null, result);
+      callback(null, 'delete success')
     })
+   
+    apigw = new apiDelete.apigateway(config.region)
+  })
   
-    let apigw = new apiDelete()
+  it('getApiList', function(done) {
+    apigw.getApiList().then(function(res) {
+      res[0].name.should.equal(config.apiname)
+      res[0].value.should.equal(config.apiid)
+      done()
+    })
+  })
   
-    apigw.setRegion(config.region).then(function() {
-      return apigw.setApiList()
-    }).then(function(res) {
-      let api = _.filter(apigw.q.apiname.choices, { 'value': config.apiid })
-      api[0].name.should.equal(config.apiname)
-      api[0].value.should.equal(config.apiid)
-      return apigw.deleteApi(config.apiid)
-    }).then(function(res) {
-      res.should.be.empty
+  it('deleteApi', function(done) {
+    apigw.deleteApi().then(function(res) {
+      res.should.equal('delete success')
       done()
     })
   })
