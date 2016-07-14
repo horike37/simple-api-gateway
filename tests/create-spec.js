@@ -4,14 +4,11 @@ var chai       = require('chai'),
     aws        = require('aws-sdk-mock'),
     create     = require('../lib/create'),
     config     = require('./config'),
-    should     = chai.should()
+    should     = chai.should(),
+    apigw
   
 describe('API Create Tests', function() {
-  this.timeout(0)
-  before(function() {})
-  after(function() {})
-  
-  it('Create action test', function(done) {
+  beforeEach(function() {
     aws.mock('APIGateway', 'createRestApi', function (params, callback){
       let result = { 
         id: config.apiid,
@@ -22,12 +19,11 @@ describe('API Create Tests', function() {
       callback(null, result);
     })
    
-    let apigw = new create()
-    
-
-    apigw.setRegion(config.region).then(function(res) {
-      return apigw.createRestApi(config.apiname)
-    }).then(function(res) {
+    apigw = new create.apigateway(config.region)
+  })
+  
+  it('createRestApi', function(done) {
+    apigw.createRestApi(config.apiname).then(function(res) {
       res.name.should.equal(config.apiname)
       done()
     })
