@@ -10,11 +10,22 @@ This module provide to easy interactive setting for API Gateway. Very easy. Very
 
     $ npm install -g simple-api-gateway
 
+## Setup(AWS-CLI)
+You need AWS-CLI.
+
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ brew install wget
+    $ brew install awscli
+
+And please setup AWS-CLI's configure
+
+    $ aws configure
+
 ## How to use
 Create API.
 
     $ apigw create
-    
+
 Edit API.
 
     $ apigw edit
@@ -22,8 +33,7 @@ Edit API.
 Deploy and Publish API.
 
     $ apigw deploy
-    
+
 Delete API.
 
     $ apigw delete
-
