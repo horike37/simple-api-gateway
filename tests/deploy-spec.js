@@ -36,49 +36,33 @@ describe('API Deploy Tests', function() {
       callback(null, 'createDeployment sucess');
     })
     
-    apigw = new apiDeploy()
+    apigw = new apiDeploy.apigateway(config.region)
   })
   
-  it('setRegion', function(done) {
-    apigw.setRegion(config.region).then(function(res) {
-      (typeof res).should.be.equal('undefined')
+  it('getApiList', function(done) {
+    apigw.getApiList().then(function(res) {
+      res[0].name.should.equal(config.apiname)
+      res[0].value.should.equal(config.apiid)
       done()
     })
   })
   
-  it('setApiList', function(done) {
-    apigw.setAPIGateway().then(function(res) {
-      return apigw.setApiList()
-    }).then(function(res) {
-      let api = _.filter(apigw.q.apiName.choices, { 'value': config.apiid })
-      api[0].name.should.equal(config.apiname)
-      api[0].value.should.equal(config.apiid)
-      done()
-    })
-  })
-  
-  it('setStageList', function(done) {
-    apigw.setAPIGateway().then(function(res) {
-      return apigw.setStageList(config.apiid)
-    }).then(function() {
-      apigw.q.listStageName.choices[0].should.equal(config.stageName)
+  it('getStageList', function(done) {
+    apigw.getStageList(config.apiid).then(function(res) {
+      res[0].should.equal(config.stageName)
       done()
     })
   })
 
   it('isStages', function(done) {
-    apigw.setAPIGateway().then(function(res) {
-      return apigw.isStages(config.apiid)
-    }).then(function(res) {
+    apigw.isStages(config.apiid).then(function(res) {
       res.should.be.true
       done()
     })
   })
   
   it('createDeployment', function(done) {
-    apigw.setAPIGateway().then(function(res) {
-      return apigw.createDeployment(config.apiid, config.stageName)
-    }).then(function(res) {
+    apigw.createDeployment(config.apiid, config.stageName).then(function(res) {
       res.should.be.equal('createDeployment sucess')
       done()
     })
