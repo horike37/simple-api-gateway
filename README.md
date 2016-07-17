@@ -37,3 +37,16 @@ Deploy and Publish API.
 Delete API.
 
     $ apigw delete
+
+## Examples
+### Use ajax on browsers
+
+    JQuery(document).ready(function(){
+      JQuery.post("<your API Endpoint>",
+        '{ "say" : "hello" }',
+        function(data){
+          console.log(data)
+        },
+        "json"
+      )
+    })
