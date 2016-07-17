@@ -39,7 +39,7 @@ Delete API.
     $ apigw delete
 
 ## Examples
-### Use ajax on browsers
+### Use jQuery Ajax on browsers
 
     JQuery(document).ready(function(){
       JQuery.post("<your API Endpoint>",
