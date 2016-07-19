@@ -38,7 +38,7 @@ Delete API.
 
     $ apigw delete
 
-## Examples
+## Client Code Examples
 ### Use jQuery Ajax on browsers
 
     JQuery(document).ready(function(){
