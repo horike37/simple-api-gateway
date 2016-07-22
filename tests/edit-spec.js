@@ -29,12 +29,25 @@ describe('API Edit Tests', function() {
     })
     
     aws.mock('APIGateway', 'getResources', function (params, callback){
-      let result = {}
+      let result = {
+        items: [{ 
+          id: config.resourceId, 
+          path: config.pathPart, 
+          resourceMethods: {
+            'GET':{}
+          } 
+        }]
+      }
       callback(null, result)
     })
     
     aws.mock('APIGateway', 'createResource', function (params, callback){
-      let result = {}
+      let result = { 
+        id      : config.resourceId,
+        parentId: config.parentResourceId,
+        pathPart: config.pathPart,
+        path    : config.path
+      }
       callback(null, result)
     })
     
@@ -83,5 +96,23 @@ describe('API Edit Tests', function() {
       res[0].value.should.equal(config.apiid)
       done()
     })
+  })
+
+  it('getResources', function(done) {
+    apigw.getResources(config.apiid).then(function(res) {
+      res[0].name.should.equal(config.pathPart)
+      res[0].value.should.equal(config.resourceId)
+      done()
+    })
+  })
+  
+  it('createResource', function(done) {
+   apigw. createResource(config.parentResourceId, config.pathPart, config.apiid).then(function(res) {
+     res.id.should.equal(config.resourceId)
+     res.parentId.should.equal(config.parentResourceId)
+     res.pathPart.should.equal(config.pathPart)
+     res.path.should.equal(config.path)
+     done()
+   })
   })
 })
